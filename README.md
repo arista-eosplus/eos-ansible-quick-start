@@ -24,7 +24,7 @@ You'll answer a few basic questions to help get your files setup.
 
 ```
 What is the IP or FQDN of your EOS device?: 172.16.130.201
-How would you like to connect to the switch? [cli|http|https]: http
+How would you like to connect to the switch? [ssh|http|https]: http
 EOS Username?: admin
 EOS password?:
 Do we need to run 'enable' upon login? [yes|no]: no

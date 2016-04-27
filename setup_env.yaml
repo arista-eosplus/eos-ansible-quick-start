@@ -4,7 +4,7 @@
   connection: local
 
   vars:
-    version: 1.0.1
+    version: 1.0.0
 
   vars_prompt:
     - name: "host_addr"
@@ -12,7 +12,7 @@
       private: no
 
     - name: "transport"
-      prompt: "How would you like to connect to the switch? [cli|http|https]"
+      prompt: "How would you like to connect to the switch? [ssh|http|https]"
       private: no
 
     - name: "username"

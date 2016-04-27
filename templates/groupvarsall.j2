@@ -14,7 +14,7 @@ provider:
   use_ssl: yes
   transport: eapi
 {% else %}
-  transport: {{ transport }}
+  transport: cli
 {% endif %}
 
 eos_purge_vlan_trunk_groups: yes

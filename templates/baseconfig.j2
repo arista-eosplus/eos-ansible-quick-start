@@ -1,0 +1,8 @@
+#jinja2: trim_blocks: False
+#jinja2: lstrip_blocks: False
+
+hostname {{ hostname }}
+
+{% for dns_ip in dns_servers %}
+ip name-server vrf default {{ dns_ip }}
+{% endfor %}

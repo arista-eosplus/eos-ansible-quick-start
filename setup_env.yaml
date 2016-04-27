@@ -1,0 +1,38 @@
+---
+- hosts: localhost
+  gather_facts: no
+  connection: local
+
+  vars:
+    version: 1.0.0
+
+  vars_prompt:
+    - name: "host_addr"
+      prompt: "What is the IP or FQDN of your EOS device?"
+      private: no
+
+    - name: "transport"
+      prompt: "How would you like to connect to the switch? [cli|http|https]"
+      private: no
+
+    - name: "username"
+      prompt: "EOS Username?"
+      private: no
+
+    - name: "password"
+      prompt: "EOS password?"
+      private: yes
+
+    - name: "authorize"
+      prompt: "Do we need to run 'enable' upon login? [yes|no]"
+      private: no
+
+  tasks:
+    - name: Generate group_vars/all file
+      template: dest='group_vars/all.yaml' src=groupvarsall.j2 backup=yes
+
+    - name: Generate hosts file
+      template: dest='./hosts' src=hosts.j2 backup=yes
+
+    - name: Generate hostvars file
+      template: dest='host_vars/{{ host_addr }}.yaml' src=hostvars.j2 backup=yes

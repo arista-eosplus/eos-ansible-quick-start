@@ -1,0 +1,7 @@
+---
+- hosts: leaf
+  gather_facts: no
+  connection: local
+
+  roles:
+    - arista.eos-bridging

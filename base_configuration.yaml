@@ -1,0 +1,10 @@
+---
+- hosts: eos_demo_group
+  gather_facts: no
+  connection: local
+
+  tasks:
+    - name: Arista EOS Base Configuration
+      eos_template:
+        src=baseconfig.j2
+        provider={{ provider|default(omit) }}

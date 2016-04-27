@@ -60,3 +60,11 @@ target/
 
 #Ipython Notebook
 .ipynb_checkpoints
+
+# Ansible Files
+*.retry
+*@*~
+roles/arista.*
+group_vars/all*
+!host_vars/README.md
+host_vars/*.yaml

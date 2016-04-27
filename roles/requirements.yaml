@@ -1,0 +1,9 @@
+- src: arista.eos-bgp
+- src: arista.eos-bridging
+- src: arista.eos-interfaces
+- src: arista.eos-ipv4
+- src: arista.eos-mlag
+- src: arista.eos-route-control
+- src: arista.eos-system
+- src: arista.eos-virtual-router
+- src: arista.eos-vxlan

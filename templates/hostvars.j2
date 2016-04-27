@@ -1,0 +1,41 @@
+---
+hostname: arista.makes.the.best.switches
+
+vlans:
+  - vlanid: 1
+    name: default
+  - vlanid: 2
+    name: production
+  - vlanid: 200
+    state: absent
+    name: ansible-test
+    trunk_groups:
+      - tg1
+      - tg2
+      - tg3
+
+interfaces:
+  - name: Loopback0
+    enable: true
+  - name: Loopback1
+    enable: true
+  - name: Ethernet1
+    description: "[BGP]Connection to Spine1"
+    enable: true
+  - name: Ethernet2
+    description: "[BGP]Connection to Spine2"
+    enable: true
+
+ip_interfaces:
+  - name: Loopback0
+    address: 1.1.1.1/32
+    state: absent
+  - name: Loopback1
+    address: 2.2.2.1/32
+  - name: Ethernet1
+    address: 10.1.1.0/31
+    state: present
+    mtu: 9000
+  - name: Ethernet2
+    address: 10.1.1.2/31
+    mtu: 9000

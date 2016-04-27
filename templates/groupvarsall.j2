@@ -1,0 +1,36 @@
+---
+# make ansible play nice in a virtualenv
+ansible_python_interpreter: python
+
+provider:
+  host: {{ host_addr }}
+  username: {{ username }}
+  password: {{ password }}
+  authorize: {{ authorize }}
+{% if transport == 'http' %}
+  use_ssl: no
+  transport: eapi
+{% elif transport == 'https' %}
+  use_ssl: yes
+  transport: eapi
+{% else %}
+  transport: {{ transport }}
+{% endif %}
+
+eos_purge_vlan_trunk_groups: yes
+
+eos_users:
+  - name: superadmin
+    encryption: md5
+    secret: '$1$J0auuPhz$Pkr5NnHssW.Jqlk17Ylpk0'
+    privilege: 15
+    role: network-admin
+  - name: simplebob
+    nopassword: true
+    privilege: 0
+    role: network-operator
+
+dns_servers:
+  - 8.8.8.8
+  - 1.1.1.1
+  - 2.2.2.2

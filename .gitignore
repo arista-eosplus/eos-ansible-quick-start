@@ -68,3 +68,4 @@ roles/arista.*
 group_vars/all*
 !host_vars/README.md
 host_vars/*.yaml
+hosts

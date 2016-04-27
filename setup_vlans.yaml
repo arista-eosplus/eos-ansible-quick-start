@@ -1,5 +1,5 @@
 ---
-- hosts: leaf
+- hosts: eos_demo_group
   gather_facts: no
   connection: local
 

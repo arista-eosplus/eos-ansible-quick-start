@@ -6,18 +6,13 @@ This repo includes automated playbooks that will help you run some basic playboo
 
 ## Prereqs
 * git
-* Ansible 2.1+ (or Ansible 2.0.1 networking preview [releases](http://releases.ansible.com/ansible-network/latest))
+* Ansible 2.1+
 * A CLI user created on your switch
 * An Arista EOS switch with eAPI enabled or SSH access
 
-### A Note about Ansible Versions
-Until Ansible 2.1 is uploaded to Pypi, or any of the common package managers, the
-only way you can get the new modules is by running from Git source, or using one of the
-special network preview [releases](http://releases.ansible.com/ansible-network/latest).
-One easy method is using Pip's source install feature:
 
 ```
-[sudo] pip install git+git://github.com/ansible/ansible.git@devel
+[sudo] pip install ansible
 ```
 
 

@@ -3,7 +3,7 @@
 ansible_python_interpreter: python
 
 provider:
-  host: {{ host_addr }}
+  host: {{ '"{{' }} inventory_hostname {{ '}}"' }}
   username: {{ username }}
   password: {{ password }}
   authorize: {{ authorize }}

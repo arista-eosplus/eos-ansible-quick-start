@@ -29,10 +29,10 @@
 
   tasks:
     - name: Generate group_vars/all file
-      template: dest='group_vars/all.yaml' src=groupvarsall.j2 backup=yes
+      template: dest='group_vars/all.yaml' src=setup/groupvarsall.j2 backup=yes
 
     - name: Generate hosts file
-      template: dest='./hosts' src=hosts.j2 backup=yes
+      template: dest='./hosts' src=setup/hosts.j2 backup=yes
 
     - name: Generate hostvars file
-      template: dest='host_vars/{{ host_addr }}.yaml' src=hostvars.j2 backup=yes
+      template: dest='host_vars/{{ host_addr }}.yaml' src=setup/hostvars.j2 backup=yes

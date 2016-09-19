@@ -26,11 +26,13 @@ docker build -t ansible .
 ```
 Note: If you want to run Ansible from Source, run:
 ```
-docker build -t ansible-dev -f ./Dockerfile-dev
+docker build -t ansible-dev -f ./Dockerfile-dev .
 ```
 
 ### Run the Container
-``docker run -i -t -v $(pwd):/ansible-sample ansible``
+```
+docker run -i -t -v $(pwd):/ansible-sample ansible
+```
 
 Note: The ``-v`` will mount the files in this quickstart repo into the root
 of the docker container. You will find this in ``/ansible-sample``. If you

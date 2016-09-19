@@ -2,29 +2,47 @@
 A simple Ansible setup to get you up and running faster!
 
 ## Intro
-This repo includes automated playbooks that will help you run some basic playbooks against your Arista EOS switch. This setup is not meant to be a boilerplate for production, rather, a quick and easy way to learn the basics.
+This repo includes automated playbooks that will help you run some basic playbooks against your Arista EOS switch. This setup is not meant to be a boilerplate for production, rather, a quick and easy way to learn the basics. Instead of dealing with system-specific install
+issues with Ansible, this quickstart has you run Ansible from Docker.
 
 ## Prereqs
-* git
-* Ansible 2.1+
+* Docker
 * A CLI user created on your switch
 * An Arista EOS switch with eAPI enabled or SSH access
-
-
-```
-[sudo] pip install ansible
-```
 
 
 ## Getting Started
 
 ### First clone this repo
 
-``git clone https://github.com/arista-eosplus/eos-ansible-quick-start.git``
+```
+git clone https://github.com/arista-eosplus/eos-ansible-quick-start.git
+cd eos-ansible-quick-start
+```
+
+### Create the Docker Image
+```
+docker build -t ansible .
+```
+Note: If you want to run Ansible from Source, run:
+```
+docker build -t ansible-dev -f ./Dockerfile-dev
+```
+
+### Run the Container
+``docker run -i -t -v $(pwd):/ansible-sample ansible``
+
+Note: The ``-v`` will mount the files in this quickstart repo into the root
+of the docker container. You will find this in ``/ansible-sample``. If you
+created the development version, substitute ``ansible`` with ``ansible-dev``
+
 
 ### Run the Setup Playbook
 
-``ansible-playbook setup_env.yaml``
+```
+cd /ansible-sample
+ansible-playbook setup_env.yaml
+```
 
 You'll answer a few basic questions to help get your files setup.
 

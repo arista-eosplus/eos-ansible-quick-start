@@ -6,4 +6,8 @@ RUN pip install paramiko PyYAML Jinja2 httplib2 six
 RUN git clone git://github.com/ansible/ansible.git --recursive
 RUN echo 'source /ansible/hacking/env-setup' >> ~/.bashrc
 
+RUN apt-get install -y iputils-ping
+RUN apt-get install -y net-tools
+RUN apt-get install -y tcpdump
+
 ENTRYPOINT /bin/bash

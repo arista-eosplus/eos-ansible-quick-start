@@ -9,5 +9,6 @@ RUN echo 'source /ansible/hacking/env-setup' >> ~/.bashrc
 RUN apt-get install -y iputils-ping
 RUN apt-get install -y net-tools
 RUN apt-get install -y tcpdump
+RUN apt-get install -y vim
 
 ENTRYPOINT /bin/bash

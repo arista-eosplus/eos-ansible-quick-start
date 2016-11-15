@@ -1,7 +1,9 @@
 FROM ansible/ansible:ubuntu1604
 
+RUN apt-get update
+Run apt-get install -y gcc make python-dev libssl-dev libffi-dev
 RUN pip install --upgrade pip
-RUN pip install paramiko PyYAML Jinja2 httplib2 six
+RUN pip install -U paramiko PyYAML Jinja2 httplib2 six
 
 RUN git clone git://github.com/ansible/ansible.git --recursive
 RUN echo 'source /ansible/hacking/env-setup' >> ~/.bashrc

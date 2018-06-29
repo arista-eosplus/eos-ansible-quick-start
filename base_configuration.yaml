@@ -5,6 +5,6 @@
 
   tasks:
     - name: Arista EOS Base Configuration
-      eos_template:
+      eos_config:
         src=baseconfig.j2
         provider={{ provider|default(omit) }}
